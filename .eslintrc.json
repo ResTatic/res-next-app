@@ -1,0 +1,51 @@
+{
+  "extends": [
+    "plugin:unicorn/recommended",
+    "plugin:promise/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:import/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "airbnb",
+    "airbnb/hooks",
+    "airbnb-typescript",
+    "plugin:@next/next/recommended",
+    "plugin:react/jsx-runtime",
+    "prettier"
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    // debatable and interferes with function typing (eg. React.FC)
+    "react/function-component-definition": 0,
+    // allow special comments (eg. TODO)
+    "spaced-comment": [2, "always", { "markers": ["TODO", "FIXME", "/"] }],
+    // too many exceptions to be feasible (eg. getStaticProps)
+    "unicorn/prevent-abbreviations": 0,
+    // default kebap-case is not the accepted standard for JS
+    "unicorn/filename-case": [
+      1,
+      {
+        "case": "camelCase"
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["components/*"],
+      "rules": {
+        // named exports for components
+        "import/prefer-default-export": 0,
+        "import/no-default-export": 2,
+
+        "unicorn/filename-case": [
+          1,
+          {
+            "case": "pascalCase"
+          }
+        ]
+      }
+    }
+  ]
+}
