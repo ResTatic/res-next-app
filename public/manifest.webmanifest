@@ -1,0 +1,8 @@
+{
+  "name": "res-next-app",
+  "short_name": "res",
+  "description": "custom create-next-app starter template",
+  "lang": "en",
+  "theme_color": "#181a1b",
+  "background_color": "#181a1b"
+}
